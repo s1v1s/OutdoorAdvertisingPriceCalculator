@@ -41,15 +41,12 @@ namespace Ad_calculator
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,34 +55,32 @@ namespace Ad_calculator
             this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.numericUpDown13 = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
             this.numericUpDown14 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
-            this.numericUpDown15 = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -104,31 +99,31 @@ namespace Ad_calculator
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDown3, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown4, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown5, 0, 11);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDown6, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDown7, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label8, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown8, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.label9, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBox3, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label10, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDown11, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown12, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.label13, 2, 8);
             this.tableLayoutPanel1.Controls.Add(this.label14, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDown13, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.label15, 3, 6);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDown14, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.label16, 3, 8);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown15, 3, 9);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 12);
             this.tableLayoutPanel1.Controls.Add(this.button2, 3, 12);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textBox2, 0, 11);
+            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textBox4, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.textBox5, 3, 9);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
@@ -266,20 +261,6 @@ namespace Ad_calculator
             this.label4.TabIndex = 73;
             this.label4.Text = "Стоимость листа (руб)";
             // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.DecimalPlaces = 2;
-            this.numericUpDown4.Location = new System.Drawing.Point(3, 345);
-            this.numericUpDown4.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDown4.TabIndex = 74;
-            this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -288,20 +269,6 @@ namespace Ad_calculator
             this.label5.Size = new System.Drawing.Size(76, 18);
             this.label5.TabIndex = 75;
             this.label5.Text = "Итог (руб)";
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.DecimalPlaces = 2;
-            this.numericUpDown5.Location = new System.Drawing.Point(3, 421);
-            this.numericUpDown5.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDown5.TabIndex = 76;
-            this.numericUpDown5.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
             // 
             // label6
             // 
@@ -356,20 +323,6 @@ namespace Ad_calculator
             this.label8.Size = new System.Drawing.Size(199, 18);
             this.label8.TabIndex = 81;
             this.label8.Text = "Стоимость фрезеровки (руб)";
-            // 
-            // numericUpDown8
-            // 
-            this.numericUpDown8.DecimalPlaces = 2;
-            this.numericUpDown8.Location = new System.Drawing.Point(177, 345);
-            this.numericUpDown8.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDown8.TabIndex = 82;
-            this.numericUpDown8.ValueChanged += new System.EventHandler(this.numericUpDown8_ValueChanged);
             // 
             // label9
             // 
@@ -462,21 +415,6 @@ namespace Ad_calculator
             this.numericUpDown11.TabIndex = 88;
             this.numericUpDown11.ValueChanged += new System.EventHandler(this.numericUpDown11_ValueChanged);
             // 
-            // numericUpDown12
-            // 
-            this.numericUpDown12.BackColor = System.Drawing.SystemColors.Window;
-            this.numericUpDown12.DecimalPlaces = 2;
-            this.numericUpDown12.Location = new System.Drawing.Point(407, 345);
-            this.numericUpDown12.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numericUpDown12.Name = "numericUpDown12";
-            this.numericUpDown12.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDown12.TabIndex = 89;
-            this.numericUpDown12.ValueChanged += new System.EventHandler(this.numericUpDown12_ValueChanged);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -540,20 +478,6 @@ namespace Ad_calculator
             this.label16.TabIndex = 95;
             this.label16.Text = "Стоимость фрезеровки (руб)";
             // 
-            // numericUpDown15
-            // 
-            this.numericUpDown15.DecimalPlaces = 2;
-            this.numericUpDown15.Location = new System.Drawing.Point(581, 345);
-            this.numericUpDown15.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numericUpDown15.Name = "numericUpDown15";
-            this.numericUpDown15.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDown15.TabIndex = 96;
-            this.numericUpDown15.ValueChanged += new System.EventHandler(this.numericUpDown15_ValueChanged);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(3, 459);
@@ -570,9 +494,49 @@ namespace Ad_calculator
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(199, 38);
             this.button2.TabIndex = 98;
-            this.button2.Text = "Сохранить данные в XML";
+            this.button2.Text = "Сохранить расценки в XML";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 345);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(120, 25);
+            this.textBox1.TabIndex = 99;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(3, 421);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(120, 25);
+            this.textBox2.TabIndex = 100;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(177, 345);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(120, 25);
+            this.textBox3.TabIndex = 101;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(407, 345);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(120, 25);
+            this.textBox4.TabIndex = 102;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(581, 345);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(120, 25);
+            this.textBox5.TabIndex = 103;
             // 
             // Form2
             // 
@@ -589,19 +553,14 @@ namespace Ad_calculator
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -620,15 +579,12 @@ namespace Ad_calculator
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDown7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label10;
@@ -637,15 +593,18 @@ namespace Ad_calculator
         private System.Windows.Forms.NumericUpDown numericUpDown10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numericUpDown11;
-        private System.Windows.Forms.NumericUpDown numericUpDown12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.NumericUpDown numericUpDown13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown numericUpDown14;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown numericUpDown15;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }

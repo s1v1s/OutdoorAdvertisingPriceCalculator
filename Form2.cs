@@ -10,50 +10,13 @@ namespace Ad_calculator
 {
     public partial class Form2 : Form
     {
-        DataSet priceSet = new DataSet("PriceSet");
-        DataTable materials = new DataTable("Materials");
         DataTable back = new DataTable("Back");
         DataTable front = new DataTable("Front");
-
+        DataTable materials = new DataTable("Materials");
+        DataSet priceSet = new DataSet("PriceSet");
         public Form2()
         {
             InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            dbStart();
-            label1.Visible = false;
-            comboBox2.Visible = false;
-            foreach (DataRow rowM in materials.Rows)
-            {
-                comboBox1.Items.Add(rowM["Type"]);
-            }
-            foreach (DataRow rowB in back.Rows)
-            {
-                comboBox3.Items.Add(rowB["ThicknessMM"]);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            priceSet.WriteXml("Database.xml");
-        }
-
-        private void UpdatePrice()
-        {
-            numericUpDown4.Value = numericUpDown1.Value * numericUpDown2.Value * numericUpDown3.Value;
-            numericUpDown8.Value = numericUpDown6.Value * numericUpDown7.Value;
-            numericUpDown12.Value = numericUpDown9.Value * numericUpDown10.Value * numericUpDown11.Value;
-            numericUpDown15.Value = numericUpDown13.Value * numericUpDown14.Value;
-            numericUpDown5.Value = numericUpDown4.Value + numericUpDown8.Value + numericUpDown12.Value + numericUpDown15.Value;
-
-            numericUpDown5.BackColor = Color.FromName("Info");
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            UpdatePrice();
         }
 
         public void dbStart()
@@ -82,7 +45,7 @@ namespace Ad_calculator
 
             try
             {
-                ds.ReadXml("db3.xml");
+                ds.ReadXml("Database.xml");
                 priceSet.Merge(ds, true, MissingSchemaAction.Ignore);
             }
             catch (System.IO.FileNotFoundException)
@@ -112,6 +75,16 @@ namespace Ad_calculator
             front.Rows.Add(new object[] { 3, "5", 340 });
             front.Rows.Add(new object[] { 3, "8", 330 });
             front.Rows.Add(new object[] { 3, "19", 320 });
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            priceSet.WriteXml("Database.xml");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,7 +173,51 @@ namespace Ad_calculator
             }
         }
 
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            dbStart();
+            label1.Visible = false;
+            comboBox2.Visible = false;
+            foreach (DataRow rowM in materials.Rows)
+            {
+                comboBox1.Items.Add(rowM["Type"]);
+            }
+            foreach (DataRow rowB in back.Rows)
+            {
+                comboBox3.Items.Add(rowB["ThicknessMM"]);
+            }
+        }
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
+
+        private void numericUpDown10_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
+
+        private void numericUpDown11_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
+
+        private void numericUpDown12_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
+
+        private void numericUpDown13_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
+
+        private void numericUpDown14_ValueChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
+        }
+
+        private void numericUpDown15_ValueChanged(object sender, EventArgs e)
         {
             UpdatePrice();
         }
@@ -245,34 +262,16 @@ namespace Ad_calculator
             UpdatePrice();
         }
 
-        private void numericUpDown10_ValueChanged(object sender, EventArgs e)
+        private void UpdatePrice()
         {
-            UpdatePrice();
-        }
 
-        private void numericUpDown11_ValueChanged(object sender, EventArgs e)
-        {
-            UpdatePrice();
-        }
+            textBox1.Text = Convert.ToString(numericUpDown1.Value * numericUpDown2.Value * numericUpDown3.Value);
+            textBox3.Text = Convert.ToString(numericUpDown6.Value * numericUpDown7.Value);
+            textBox4.Text = Convert.ToString(numericUpDown9.Value * numericUpDown10.Value * numericUpDown11.Value);
+            textBox5.Text = Convert.ToString(numericUpDown13.Value * numericUpDown14.Value);
+            textBox2.Text = Convert.ToString(Convert.ToDecimal(textBox1.Text) + Convert.ToDecimal(textBox3.Text) + Convert.ToDecimal(textBox4.Text) + Convert.ToDecimal(textBox5.Text));
 
-        private void numericUpDown12_ValueChanged(object sender, EventArgs e)
-        {
-            UpdatePrice();
-        }
-
-        private void numericUpDown13_ValueChanged(object sender, EventArgs e)
-        {
-            UpdatePrice();
-        }
-
-        private void numericUpDown14_ValueChanged(object sender, EventArgs e)
-        {
-            UpdatePrice();
-        }
-
-        private void numericUpDown15_ValueChanged(object sender, EventArgs e)
-        {
-            UpdatePrice();
+            textBox2.BackColor = Color.FromName("Info");
         }
     }
 }
