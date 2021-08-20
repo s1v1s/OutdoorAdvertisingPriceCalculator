@@ -10,10 +10,10 @@ namespace Ad_calculator
 {
     public partial class Form2 : Form
     {
-        DataTable back = new DataTable("Back");
-        DataTable front = new DataTable("Front");
-        DataTable materials = new DataTable("Materials");
-        DataSet priceSet = new DataSet("PriceSet");
+        public DataTable back = new DataTable("Back");
+        public DataTable front = new DataTable("Front");
+        public DataTable materials = new DataTable("Materials");
+        public DataSet priceSet = new DataSet("PriceSet");
         int meter = 1000;
         int comboBox4PerviousIndex;
 
@@ -406,6 +406,12 @@ namespace Ad_calculator
         private void numericUpDown15_ValueChanged(object sender, EventArgs e)
         {
             UpdatePrice();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form Form1 = new Form1(back, front, materials);
+            Form1.Show();
         }
     }
 }

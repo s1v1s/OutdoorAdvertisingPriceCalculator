@@ -71,6 +71,7 @@ namespace Ad_calculator
             this.label17 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -131,6 +132,7 @@ namespace Ad_calculator
             this.tableLayoutPanel1.Controls.Add(this.label17, 3, 10);
             this.tableLayoutPanel1.Controls.Add(this.comboBox4, 3, 11);
             this.tableLayoutPanel1.Controls.Add(this.button3, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.button4, 2, 12);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 13);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -600,6 +602,16 @@ namespace Ad_calculator
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(433, 495);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(209, 34);
+            this.button4.TabIndex = 107;
+            this.button4.Text = "Открыть редактор";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -610,7 +622,7 @@ namespace Ad_calculator
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Калькулятор стоимости изготовления внешней рекламы";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -674,5 +686,6 @@ namespace Ad_calculator
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
