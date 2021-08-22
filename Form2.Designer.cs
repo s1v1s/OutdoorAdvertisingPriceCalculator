@@ -62,7 +62,6 @@ namespace Ad_calculator
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -70,8 +69,8 @@ namespace Ad_calculator
             this.label11 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -123,16 +122,15 @@ namespace Ad_calculator
             this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBox4, 2, 9);
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 3, 9);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 3, 12);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.label8, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.label13, 2, 8);
             this.tableLayoutPanel1.Controls.Add(this.label16, 3, 8);
             this.tableLayoutPanel1.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label17, 3, 10);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox4, 3, 11);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 1, 12);
-            this.tableLayoutPanel1.Controls.Add(this.button4, 2, 12);
+            this.tableLayoutPanel1.Controls.Add(this.label17, 1, 10);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox4, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.button4, 3, 12);
+            this.tableLayoutPanel1.Controls.Add(this.button3, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 13);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -170,7 +168,7 @@ namespace Ad_calculator
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 40);
             this.label1.TabIndex = 67;
-            this.label1.Text = "Толщина ПВХ лицевой стороны (мм)";
+            this.label1.Text = "Толщина ПВХ лицевой стороны (м)";
             // 
             // comboBox2
             // 
@@ -189,7 +187,7 @@ namespace Ad_calculator
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(205, 40);
             this.label2.TabIndex = 69;
-            this.label2.Text = "Площадь лицевой стороны (мм)";
+            this.label2.Text = "Площадь лицевой стороны (м)";
             // 
             // tableLayoutPanel2
             // 
@@ -204,12 +202,12 @@ namespace Ad_calculator
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(145, 32);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(148, 32);
             this.tableLayoutPanel2.TabIndex = 70;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(75, 4);
+            this.numericUpDown2.Location = new System.Drawing.Point(77, 4);
             this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             10000000,
@@ -240,9 +238,9 @@ namespace Ad_calculator
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 246);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.Size = new System.Drawing.Size(101, 20);
             this.label3.TabIndex = 71;
-            this.label3.Text = "Цена (руб/мм)";
+            this.label3.Text = "Цена (руб/м)";
             // 
             // numericUpDown3
             // 
@@ -267,7 +265,7 @@ namespace Ad_calculator
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(209, 40);
             this.label6.TabIndex = 77;
-            this.label6.Text = "Длина фрезеровки лицевой стороны (мм)";
+            this.label6.Text = "Длина фрезеровки лицевой стороны (м)";
             // 
             // numericUpDown6
             // 
@@ -288,9 +286,9 @@ namespace Ad_calculator
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(218, 246);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 20);
+            this.label7.Size = new System.Drawing.Size(101, 20);
             this.label7.TabIndex = 79;
-            this.label7.Text = "Цена (руб/мм)";
+            this.label7.Text = "Цена (руб/м)";
             // 
             // numericUpDown7
             // 
@@ -313,9 +311,9 @@ namespace Ad_calculator
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(433, 82);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 20);
+            this.label9.Size = new System.Drawing.Size(190, 20);
             this.label9.TabIndex = 83;
-            this.label9.Text = "Толщина ПВХ задника (мм)";
+            this.label9.Text = "Толщина ПВХ задника (м)";
             // 
             // comboBox3
             // 
@@ -332,9 +330,9 @@ namespace Ad_calculator
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(433, 164);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(169, 20);
+            this.label10.Size = new System.Drawing.Size(158, 20);
             this.label10.TabIndex = 85;
-            this.label10.Text = "Площадь задника (мм)";
+            this.label10.Text = "Площадь задника (м)";
             // 
             // tableLayoutPanel3
             // 
@@ -349,7 +347,7 @@ namespace Ad_calculator
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(145, 32);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(148, 32);
             this.tableLayoutPanel3.TabIndex = 86;
             // 
             // numericUpDown9
@@ -362,13 +360,13 @@ namespace Ad_calculator
             0,
             0});
             this.numericUpDown9.Name = "numericUpDown9";
-            this.numericUpDown9.Size = new System.Drawing.Size(66, 27);
+            this.numericUpDown9.Size = new System.Drawing.Size(67, 27);
             this.numericUpDown9.TabIndex = 49;
             this.numericUpDown9.ValueChanged += new System.EventHandler(this.numericUpDown9_ValueChanged);
             // 
             // numericUpDown10
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(75, 4);
+            this.numericUpDown10.Location = new System.Drawing.Point(77, 4);
             this.numericUpDown10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown10.Maximum = new decimal(new int[] {
             10000000,
@@ -385,9 +383,9 @@ namespace Ad_calculator
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(433, 246);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 20);
+            this.label12.Size = new System.Drawing.Size(101, 20);
             this.label12.TabIndex = 87;
-            this.label12.Text = "Цена (руб/мм)";
+            this.label12.Text = "Цена (руб/м)";
             // 
             // numericUpDown11
             // 
@@ -412,7 +410,7 @@ namespace Ad_calculator
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(205, 40);
             this.label14.TabIndex = 91;
-            this.label14.Text = "Длина фрезеровки задника (мм)";
+            this.label14.Text = "Длина фрезеровки задника (м)";
             // 
             // numericUpDown13
             // 
@@ -433,9 +431,9 @@ namespace Ad_calculator
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(648, 246);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(112, 20);
+            this.label15.Size = new System.Drawing.Size(101, 20);
             this.label15.TabIndex = 93;
-            this.label15.Text = "Цена (руб/мм)";
+            this.label15.Text = "Цена (руб/м)";
             // 
             // numericUpDown14
             // 
@@ -518,17 +516,6 @@ namespace Ad_calculator
             this.textBox5.Size = new System.Drawing.Size(120, 27);
             this.textBox5.TabIndex = 103;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(648, 496);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 33);
-            this.button2.TabIndex = 98;
-            this.button2.Text = "Сохранить расценки в XML";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -577,40 +564,40 @@ namespace Ad_calculator
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(648, 410);
+            this.label17.Location = new System.Drawing.Point(218, 410);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(99, 20);
+            this.label17.Size = new System.Drawing.Size(153, 20);
             this.label17.TabIndex = 104;
-            this.label17.Text = "Размерность";
+            this.label17.Text = "Размерность (м, мм)";
             // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(648, 454);
+            this.comboBox4.Location = new System.Drawing.Point(218, 454);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 28);
             this.comboBox4.TabIndex = 105;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(648, 495);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(209, 34);
+            this.button4.TabIndex = 107;
+            this.button4.Text = "Открыть редактор цен";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(218, 495);
+            this.button3.Location = new System.Drawing.Point(218, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 34);
             this.button3.TabIndex = 106;
             this.button3.Text = "Сброс выбора";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(433, 495);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 34);
-            this.button4.TabIndex = 107;
-            this.button4.Text = "Открыть редактор";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Form2
             // 
@@ -619,8 +606,9 @@ namespace Ad_calculator
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Калькулятор стоимости изготовления внешней рекламы";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -681,7 +669,6 @@ namespace Ad_calculator
         private System.Windows.Forms.NumericUpDown numericUpDown14;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox4;
