@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -14,38 +15,111 @@ namespace Ad_calculator
         {
             InitializeComponent();
 
+            if (Application.OpenForms["Form2"] != null)
+            {
+                (Application.OpenForms["Form2"] as Form2).TempColumnAdd();
+            }
 
-            //dataGridView1[1,1].Value=
-            dataGridView1.DataSource = materials;
-            dataGridView1.Update();
+            DataGridView dg1 = dataGridView1;
+            DataGridView dg2 = dataGridView2;
+            DataGridView dg3 = dataGridView3;
 
-            dataGridView1.Columns[1].HeaderText = "Тип материала";
-            dataGridView1.Columns[2].HeaderText = "Цена материала (руб/м)";
-            dataGridView1.Columns[3].HeaderText = "Цена фрезеровки (руб/м)";
+            dg1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dg2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dg3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dg1.AllowUserToAddRows = false;
+            dg2.AllowUserToAddRows = false;
+            dg3.AllowUserToAddRows = false;
+            dg1.AllowUserToDeleteRows = false;
+            dg2.AllowUserToDeleteRows = false;
+            dg3.AllowUserToDeleteRows = false;
 
-            dataGridView1.Update();
+            dg1.DataSource = materials;
+            dg2.DataSource = front;
+            dg3.DataSource = back;
+            dg1.Update();
+            dg2.Update();
+            dg3.Update();
 
-            dataGridView2.DataSource = front;
-            dataGridView2.Update();
+            dg1.Columns[0].ReadOnly = true;
+            dg1.Columns[1].ReadOnly = true;
+            dg1.Columns[0].DefaultCellStyle.BackColor = Color.FromName("Control");
+            dg1.Columns[1].DefaultCellStyle.BackColor = Color.FromName("Control");
+            dg1.Columns[1].HeaderText = "Тип материала";
+            dg1.Columns[2].HeaderText = "Цена материала (руб/м)";
+            dg1.Columns[3].HeaderText = "Цена фрезеровки (руб/м)";
 
-            dataGridView2.Columns[1].HeaderText = "Толщина (мм)";
-            dataGridView2.Columns[2].HeaderText = "Цена материала (руб/м)";
-            dataGridView2.Columns[3].HeaderText = "Цена фрезеровки (руб/м)";
+            dg2.Columns[0].ReadOnly = true;
+            dg2.Columns[1].ReadOnly = true;
+            dg2.Columns[4].ReadOnly = true;
+            dg2.Columns[0].DefaultCellStyle.BackColor = Color.FromName("Control");
+            dg2.Columns[1].DefaultCellStyle.BackColor = Color.FromName("Control");
+            dg2.Columns[4].DefaultCellStyle.BackColor = Color.FromName("Control");
+            dg2.Columns[1].HeaderText = "Толщина (мм)";
+            dg2.Columns[2].HeaderText = "Цена материала (руб/м)";
+            dg2.Columns[3].HeaderText = "Цена фрезеровки (руб/м)";
+            dg2.Columns[4].HeaderText = "Тип материала";
+            dg2.Columns[4].DisplayIndex = 1;
 
-            dataGridView2.Update();
+            dg3.Columns[0].DefaultCellStyle.BackColor = Color.FromName("Control");
+            dg3.Columns[0].ReadOnly = true;
+            dg3.Columns[0].HeaderText = "Толщина (мм)";
+            dg3.Columns[1].HeaderText = "Цена материала (руб/м)";
+            dg3.Columns[2].HeaderText = "Цена фрезеровки (руб/м)";
+
+            dg1.Update();
+            dg2.Update();
+            dg3.Update();
             
-            dataGridView3.DataSource = back;
-            dataGridView3.Update();
-            dataGridView3.Columns[0].HeaderText = "Толщина (мм)";
-            dataGridView3.Columns[1].HeaderText = "Цена материала (руб/м)";
-            dataGridView3.Columns[2].HeaderText = "Цена фрезеровки (руб/м)";
-
-            dataGridView3.Update();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Если нажать кнопку 'Сохранить расценки в XML файл',\nто в папке создастся файл Database.xml.\nПри новом запуске программа возьмёт из него цены.\nЧтобы вернуть цены по умолчанию, нужно удалить\nфайл Database.xml");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["Form2"] != null)
+            {
+                (Application.OpenForms["Form2"] as Form2).SaveDataSetToFile();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {   
+                if (File.Exists("Database.xml"))
+                {    
+                    File.Delete("Database.xml");
+                    MessageBox.Show("Файл Database.xml удалён\nПерезапустите программу");
+                }
+                else MessageBox.Show("Файл Database.xml не найден");
+            }
+            catch (IOException ioExp)
+            {
+                MessageBox.Show(ioExp.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Автор программы: Сивушков Иван Дмитриевич\nEmail:sivushkovivan@gmail.com\nViber,Whatsapp:+79996421446");
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Application.OpenForms["Form2"] != null)
+            {
+                (Application.OpenForms["Form2"] as Form2).TempColumnClean();
+            }
+            
         }
     }
 }

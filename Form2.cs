@@ -24,9 +24,10 @@ namespace Ad_calculator
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            DbStart();
+            DataBaseStart();
             label1.Visible = false;
             comboBox2.Visible = false;
+
             foreach (DataRow rowM in materials.Rows)
             {
                 comboBox1.Items.Add(rowM["Type"]);
@@ -42,7 +43,7 @@ namespace Ad_calculator
             comboBox4PerviousIndex = comboBox4.SelectedIndex;
         }
 
-        public void DbStart()
+        public void DataBaseStart()
         {
             priceSet.Tables.Add(materials);
             priceSet.Tables.Add(front);
@@ -109,10 +110,10 @@ namespace Ad_calculator
             textBox4.Text = Convert.ToString(numericUpDown9.Value * numericUpDown10.Value * numericUpDown11.Value);
             textBox5.Text = Convert.ToString(numericUpDown13.Value * numericUpDown14.Value);
             textBox2.Text = Convert.ToString(Convert.ToDecimal(textBox1.Text) + Convert.ToDecimal(textBox3.Text) + Convert.ToDecimal(textBox4.Text) + Convert.ToDecimal(textBox5.Text));
-            changeColor();
+            ChangeColor();
         }
 
-        private void changeColor()
+        private void ChangeColor()
         {
             switch (numericUpDown3.Value)
             {
@@ -171,13 +172,56 @@ namespace Ad_calculator
             numericUpDown7.Value = 0;
             numericUpDown11.Value = 0;
             numericUpDown14.Value = 0;
-            numericUpDown3.BackColor = Color.FromName("Window");
-            numericUpDown7.BackColor = Color.FromName("Window");
-            numericUpDown11.BackColor = Color.FromName("Window");
-            numericUpDown14.BackColor = Color.FromName("Window");
             comboBox1.SelectedIndex = -1;
             comboBox2.SelectedIndex = -1;
             comboBox3.SelectedIndex = -1;
+            ChangeColor();
+        }
+
+        public void SaveDataSetToFile()
+        {
+            try
+            {
+                DataTable backTemp = new DataTable("BackTemp");
+                DataTable frontTemp = new DataTable("FrontTemp");
+                DataTable materialsTemp = new DataTable("MaterialsTemp");
+                DataSet priceSetTemp = new DataSet("PriceSetTemp");
+
+                backTemp = back;
+                frontTemp = front;
+                materialsTemp = materials;
+                priceSetTemp.Tables.Add(backTemp);
+                priceSetTemp.Tables.Add(frontTemp);
+                priceSetTemp.Tables.Add(materialsTemp);
+
+                priceSetTemp.WriteXml("Database.xml");
+            }
+            catch { Exception e; }
+
+        }
+        public void TempColumnAdd()
+        {
+            front.Columns.Add("Type", Type.GetType("System.String"));
+            foreach (DataRow rowS in front.Rows)
+            {
+
+                foreach (DataRow rowM in materials.Rows)
+                {
+                    if (rowM["ID"].ToString() == rowS["ID"].ToString())
+                    {
+                        rowS["Type"] = rowM["Type"];
+                    }
+                }
+            }
+        }
+
+        public void TempColumnClean()
+        {
+            try
+            {
+                front.Columns.Remove("Type");
+            }
+            catch { Exception e; }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -187,12 +231,18 @@ namespace Ad_calculator
 
         private void button2_Click(object sender, EventArgs e)
         {
-            priceSet.WriteXml("Database.xml");
+            SaveDataSetToFile();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             CleanScreen();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form Form1 = new Form1(back, front, materials);
+            Form1.Show();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,6 +254,7 @@ namespace Ad_calculator
             {
                 if (comboBox1.SelectedItem.ToString().Contains("ПВХ") == true)
                 {
+                    numericUpDown7.Value = 0;
                     label1.Visible = true;
                     comboBox2.Visible = true;
 
@@ -233,7 +284,8 @@ namespace Ad_calculator
                         if (rowM["Type"].ToString() == comboBox1.SelectedItem.ToString())
                         {
                             numericUpDown3.Value = Convert.ToDecimal(rowM["SquarePriceMM"]) / meter;
-                            numericUpDown3.BackColor = Color.FromName("Info");
+                            numericUpDown7.Value = Convert.ToDecimal(rowM["CutPriceFront"]) / meter;
+                            ChangeColor();
                         }
                     }
                 }
@@ -254,8 +306,7 @@ namespace Ad_calculator
                             {
                                 numericUpDown3.Value = Convert.ToDecimal(rowS["SquarePriceMM"]) / meter;
                                 numericUpDown7.Value = Convert.ToDecimal(rowS["CutPriceFront"]) / meter;
-                                numericUpDown3.BackColor = Color.FromName("Info");
-                                numericUpDown7.BackColor = Color.FromName("Info");
+                                ChangeColor();
                             }
                         }
                     }
@@ -265,7 +316,7 @@ namespace Ad_calculator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex != -1)
+            if (comboBox3.SelectedIndex != -1)
             {
                 foreach (DataRow rowB in back.Rows)
                 {
@@ -273,8 +324,7 @@ namespace Ad_calculator
                     {
                         numericUpDown11.Value = Convert.ToDecimal(rowB["SquarePriceMM"]) / meter;
                         numericUpDown14.Value = Convert.ToDecimal(rowB["CutPriceBack"]) / meter;
-                        numericUpDown11.BackColor = Color.FromName("Info");
-                        numericUpDown14.BackColor = Color.FromName("Info");
+                        ChangeColor();
                     }
                 }
             }
@@ -285,14 +335,13 @@ namespace Ad_calculator
             switch (comboBox4.SelectedIndex)
             {
                 case 0:
-                    if(comboBox4PerviousIndex != 0)
+                    if (comboBox4PerviousIndex != 0)
                     {
-                        numericUpDown3.Value /= 1000;
-                        numericUpDown7.Value /= 1000;
-                        numericUpDown11.Value /= 1000;
-                        numericUpDown14.Value /= 1000;
+                        numericUpDown3.Value *= 1000;
+                        numericUpDown7.Value *= 1000;
+                        numericUpDown11.Value *= 1000;
+                        numericUpDown14.Value *= 1000;
                         comboBox4PerviousIndex = 0;
-
 
                         label1.Text = "Толщина ПВХ лицевой стороны (м)";
                         label2.Text = "Площадь лицевой стороны (м)";
@@ -305,15 +354,15 @@ namespace Ad_calculator
                         label14.Text = "Длина фрезеровки задника (м)";
                         label15.Text = "Цена (руб/м)";
                     }
-                    meter = 1000;
+                    meter = 1;
                     break;
                 case 1:
-                    if (comboBox4PerviousIndex != 1)
+                    if(comboBox4PerviousIndex != 1)
                     {
-                        numericUpDown3.Value *= 1000;
-                        numericUpDown7.Value *= 1000;
-                        numericUpDown11.Value *= 1000;
-                        numericUpDown14.Value *= 1000;
+                        numericUpDown3.Value /= 1000;
+                        numericUpDown7.Value /= 1000;
+                        numericUpDown11.Value /= 1000;
+                        numericUpDown14.Value /= 1000;
                         comboBox4PerviousIndex = 1;
 
                         label1.Text = "Толщина ПВХ лицевой стороны (мм)";
@@ -327,10 +376,9 @@ namespace Ad_calculator
                         label14.Text = "Длина фрезеровки задника (мм)";
                         label15.Text = "Цена (руб/мм)";
                     }
-                    meter = 1;
+                    meter = 1000;
                     break;
             }
-            //1.2.3.6.7.9.10.12.14.15
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -406,12 +454,6 @@ namespace Ad_calculator
         private void numericUpDown15_ValueChanged(object sender, EventArgs e)
         {
             UpdatePrice();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Form Form1 = new Form1(back, front, materials);
-            Form1.Show();
         }
     }
 }
