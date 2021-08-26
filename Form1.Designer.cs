@@ -79,6 +79,7 @@ namespace Ad_calculator
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(592, 366);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_DataError);
             // 
             // tabPage2
             // 
@@ -99,6 +100,7 @@ namespace Ad_calculator
             this.dataGridView2.RowTemplate.Height = 27;
             this.dataGridView2.Size = new System.Drawing.Size(592, 366);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_DataError);
             // 
             // tabPage3
             // 
@@ -119,6 +121,7 @@ namespace Ad_calculator
             this.dataGridView3.RowTemplate.Height = 27;
             this.dataGridView3.Size = new System.Drawing.Size(592, 366);
             this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_DataError);
             // 
             // button2
             // 

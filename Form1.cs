@@ -70,7 +70,6 @@ namespace Ad_calculator
             dg1.Update();
             dg2.Update();
             dg3.Update();
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,7 +79,7 @@ namespace Ad_calculator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Если нажать кнопку 'Сохранить расценки в XML файл',\nто в папке создастся файл Database.xml.\nПри новом запуске программа возьмёт из него цены.\nЧтобы вернуть цены по умолчанию, нужно удалить\nфайл Database.xml");
+            MessageBox.Show("Если нажать кнопку 'Сохранить расценки в XML файл',\nто в папке создастся файл PriceDataBase.xml.\nПри новом запуске программа возьмёт из него цены.\nЧтобы вернуть цены по умолчанию, нужно удалить\nфайл PriceDataBase.xml");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -95,12 +94,12 @@ namespace Ad_calculator
         {
             try
             {   
-                if (File.Exists("Database.xml"))
+                if (File.Exists("PriceDataBase.xml"))
                 {    
-                    File.Delete("Database.xml");
-                    MessageBox.Show("Файл Database.xml удалён\nПерезапустите программу");
+                    File.Delete("PriceDataBase.xml");
+                    MessageBox.Show("Файл PriceDataBase.xml удалён\nПерезапустите программу");
                 }
-                else MessageBox.Show("Файл Database.xml не найден");
+                else MessageBox.Show("Файл PriceDataBase.xml не найден");
             }
             catch (IOException ioExp)
             {
@@ -120,6 +119,12 @@ namespace Ad_calculator
                 (Application.OpenForms["Form2"] as Form2).TempColumnClean();
             }
             
+        }
+        private void dgv_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+            MessageBox.Show("В ячейку введён не правильный тип данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            e.Cancel = false;
         }
     }
 }

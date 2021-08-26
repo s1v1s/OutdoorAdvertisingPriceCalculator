@@ -210,8 +210,8 @@ namespace Ad_calculator
             this.numericUpDown2.Location = new System.Drawing.Point(77, 4);
             this.numericUpDown2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown2.Name = "numericUpDown2";
@@ -224,8 +224,8 @@ namespace Ad_calculator
             this.numericUpDown1.Location = new System.Drawing.Point(3, 4);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
@@ -249,8 +249,8 @@ namespace Ad_calculator
             this.numericUpDown3.Location = new System.Drawing.Point(3, 291);
             this.numericUpDown3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown3.Name = "numericUpDown3";
@@ -272,8 +272,8 @@ namespace Ad_calculator
             this.numericUpDown6.Location = new System.Drawing.Point(218, 209);
             this.numericUpDown6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown6.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown6.Name = "numericUpDown6";
@@ -297,8 +297,8 @@ namespace Ad_calculator
             this.numericUpDown7.Location = new System.Drawing.Point(218, 291);
             this.numericUpDown7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown7.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown7.Name = "numericUpDown7";
@@ -355,8 +355,8 @@ namespace Ad_calculator
             this.numericUpDown9.Location = new System.Drawing.Point(3, 4);
             this.numericUpDown9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown9.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown9.Name = "numericUpDown9";
@@ -369,8 +369,8 @@ namespace Ad_calculator
             this.numericUpDown10.Location = new System.Drawing.Point(77, 4);
             this.numericUpDown10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown10.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown10.Name = "numericUpDown10";
@@ -394,8 +394,8 @@ namespace Ad_calculator
             this.numericUpDown11.Location = new System.Drawing.Point(433, 291);
             this.numericUpDown11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown11.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown11.Name = "numericUpDown11";
@@ -417,8 +417,8 @@ namespace Ad_calculator
             this.numericUpDown13.Location = new System.Drawing.Point(648, 209);
             this.numericUpDown13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown13.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown13.Name = "numericUpDown13";
@@ -442,8 +442,8 @@ namespace Ad_calculator
             this.numericUpDown14.Location = new System.Drawing.Point(648, 291);
             this.numericUpDown14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown14.Maximum = new decimal(new int[] {
-            10000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
             this.numericUpDown14.Name = "numericUpDown14";

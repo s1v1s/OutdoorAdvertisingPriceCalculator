@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -66,15 +67,22 @@ namespace Ad_calculator
             back.Columns.Add("SquarePriceMM", Type.GetType("System.Int32"));
             back.Columns.Add("CutPriceBack", Type.GetType("System.Int32"));
 
-
             DataSet ds = new DataSet();
 
             try
             {
-                ds.ReadXml("Database.xml");
-                priceSet.Merge(ds, true, MissingSchemaAction.Ignore);
+                try
+                {
+                    ds.ReadXml("PriceDataBase.xml");
+                    priceSet.Merge(ds, true, MissingSchemaAction.Ignore);
+                }
+                catch(System.Xml.XmlException)
+                {
+                    File.Delete("PriceDataBase.xml");
+                    FillDefault();
+                }
             }
-            catch (System.IO.FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 FillDefault();
             };
@@ -180,31 +188,20 @@ namespace Ad_calculator
 
         public void SaveDataSetToFile()
         {
-            try
+            TempColumnClean();
+            priceSet.WriteXml("PriceDataBase.xml");
+            TempColumnAdd();
+            if (File.Exists("PriceDataBase.xml"))
             {
-                DataTable backTemp = new DataTable("BackTemp");
-                DataTable frontTemp = new DataTable("FrontTemp");
-                DataTable materialsTemp = new DataTable("MaterialsTemp");
-                DataSet priceSetTemp = new DataSet("PriceSetTemp");
-
-                backTemp = back;
-                frontTemp = front;
-                materialsTemp = materials;
-                priceSetTemp.Tables.Add(backTemp);
-                priceSetTemp.Tables.Add(frontTemp);
-                priceSetTemp.Tables.Add(materialsTemp);
-
-                priceSetTemp.WriteXml("Database.xml");
+                MessageBox.Show("Файл PriceDataBase.xml сохранён");
             }
-            catch { Exception e; }
-
+            else { MessageBox.Show("Произошла ошибка"); }
         }
         public void TempColumnAdd()
         {
             front.Columns.Add("Type", Type.GetType("System.String"));
             foreach (DataRow rowS in front.Rows)
             {
-
                 foreach (DataRow rowM in materials.Rows)
                 {
                     if (rowM["ID"].ToString() == rowS["ID"].ToString())
